@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}orders{% endblock %}
+
+{% block content %}
+
+{% for order in orders %}
+ <div class="orders_pk">
+    <p><a href="{{ order.pk }}">{{ order }}</a></p>
+</div>
+{% endfor %}
+<div class="pagination">
+    {% if page_obj.has_previous %}
+        <a href="?page=1">&laquo; Pirma</a>
+        <a href="?page={{ page_obj.previous_page_number }}">Atgal</a>
+    {% endif %}
+
+    <span class="current">
+        Puslapis {{ page_obj.number }} iš {{ page_obj.paginator.num_pages }}
+    </span>
+
+    {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}">Pirmyn</a>
+        <a href="?page={{ page_obj.paginator.num_pages }}">Paskutinė &raquo;</a>
+    {% endif %}
+</div>
+
+
+{% endblock %}

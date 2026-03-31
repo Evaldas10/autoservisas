@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.pyc
+
+# Django
+db.sqlite3
+media/
+
+# App media (pas tave čia!)
+app/media/
+
+# Virtual env
+env/
+venv/
+
+# Environment
+.env
+project/.env
+
+# Logs
+*.log
+sent_emails/
+
+# VSCode
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db

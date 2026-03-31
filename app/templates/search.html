@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}search{% endblock %}
+
+{% block content %}
+
+{% for car in car_search_results %}
+<div class="seach-tablet">
+    <p><a href="{% url 'car' car.pk %}">{{ car }}</a></p>
+</div>
+{% endfor %}
+{% endblock %}

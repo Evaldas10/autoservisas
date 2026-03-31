@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %}Masina{% endblock %}
+
+{% block content %}
+{% if car.cover %}
+<div class="car-image">
+    <img src="{{ car.cover.url }}" alt="">
+</div>
+{% endif %}
+
+<div class="cars-list">
+    <p>Marke: {{ car.make }}</p>
+    <p>Modelis: {{ car.model }}</p>
+    <p>Valstybininis numeris: {{ car.license_plate }}</p>
+    <p>VIN kodas: {{ car.vin_code }}</p>
+    <p>Kliento vardas: {{ car.client_name }}</p>
+    <p>Aprasymas: {{ car.description }}</p>
+    <p>busena: {{ order.get_status_display }}</p>
+    
+</div>
+
+
+{% if instance.due_back %}
+<p>bus grazinta: {{ instance.due_back }}</p>
+{% endif %}
+
+{% if instance.reader %}
+<p>klientas: {{ instance.reader.username }}</p>
+{% endif %}
+
+
+<div class="comment_field">
+<h3>Komentarai:</h3>
+
+{% for comment in car.comments.all %}
+    <p class="comment_client"><strong>{{ comment.client }}</strong> - {{ comment.date_created }}</p>
+    <p class="comment_section">{{ comment.content }}</p>
+{% empty %}
+    <p>Komentarų nėra.</p>
+{% endfor %}
+
+<h4>Pridėti komentarą:</h4>
+<form method="POST" class="comment_form">
+    {% csrf_token %}
+    {{ form.as_p }}
+    {{ form.errors }}
+    <button type="submit" class="comment_button">Pridėti</button>
+</form>
+</div>
+
+
+{% endblock %}

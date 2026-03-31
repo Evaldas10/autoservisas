@@ -1,0 +1,19 @@
+{% extends "base.html" %}  
+
+{% block title %}Pradzia{% endblock %}
+
+
+{% block content  %}
+<div class="my_cars">
+<h2>Mano uzsakymai:</h2>
+
+
+{% for instance in instances %}
+<p class="paragraph">
+    <a href="{% url 'car' instance.car.id %}">{{ instance.car }}</a>
+</p>
+
+
+{% endfor %}
+</div>
+{% endblock %}

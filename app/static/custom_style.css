@@ -1,0 +1,972 @@
+
+html, body {
+    margin: 0;
+    padding: 0;
+     display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main {
+    flex: 1;
+}
+
+.container {
+    position: relative;
+    min-height: 100vh;
+    background-image: url(Banner-1-2-1472x703.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.45); 
+    z-index: 1;
+}
+
+.container > * {
+    position: relative;
+    z-index: 2;
+}
+
+.header {
+    width: 100%;
+    color: rgb(255, 252, 252);
+    background-color: transparent;
+    
+}.header ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    justify-content: space-between;
+    list-style-type: none;
+}
+
+.header ul li {
+     flex: 1;
+     
+} 
+
+.header li a {
+    display: block;          
+    text-align: center;    
+    padding: 1rem 0;
+    text-decoration: none;
+    color: inherit; 
+    font-weight: 600;
+    font-size: 1.3rem;
+    transition: all 0.4s;
+    border: 1.3px solid rgb(131, 130, 130);
+    border-radius: 10px;
+}
+
+.header li a:hover {
+    color: rgb(116, 182, 182);
+}
+
+
+.text {
+    display: flex;
+    margin: 20px;
+    padding: 15px;
+    text-align: center;
+    color: rgb(85, 235, 227);
+    font-size: 2rem;
+    font-weight: 600;
+    justify-content: center;
+    list-style-type: none;
+    font-family: Lora, serif;
+}
+
+.list {
+    color: rgb(85, 235, 227);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 10px;
+    margin: 10px;
+    list-style-type: none;
+    font-weight: 400;
+    gap: 1rem; 
+}
+
+.list_in {
+    background-color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(59, 202, 190);
+    max-width: 450px;
+    height: 100px;       
+    border: 3px solid black;     
+    text-decoration: none;  
+    font-size: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 700;        
+    padding: 15px;
+    gap: 10px;
+    padding-top: 25px;
+    margin-top: 30px;
+    transition: all 0.4s;
+    cursor: pointer;
+}
+
+ .auto {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    columns: column;
+} 
+
+.cars-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 2px solid black;
+    text-decoration: none;
+    font-size: 25px;
+    padding: 15px;
+    margin: 15px 0;
+    padding-top: 25px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    color: rgb(77, 197, 201);
+    gap: 10px;
+}
+
+.cars-list_top {
+    background-color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 450px;
+    height: 100px;    
+    color: rgb(71, 233, 233);   
+    border: 3px solid black;     
+    font-size: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 700;        
+    padding: 15px;
+    gap: 10px;
+    padding-top: 25px;
+    margin-top: 30px;
+    transition: all 0.4s;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.cars-list_top p  a{
+     text-decoration: none; 
+     color: rgb(71, 233, 233); 
+}
+
+.cars-list_top:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.cars-list p {
+    margin: 0;
+    padding: 0;
+}
+
+.cars-list p a {
+    display: block;
+    color: white;           
+    text-decoration: none;  
+    font-size: 1.3rem;
+    font-weight: 500;
+    display: block;         
+    padding: 15px;         
+}
+
+.orders_pk {
+    background-color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 450px;
+    height: 100px;       
+    border: 3px solid black;     
+    text-decoration: none;  
+    font-size: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 700;        
+    padding: 15px;
+    gap: 10px;
+    padding-top: 25px;
+    margin-top: 30px;
+    transition: all 0.4s;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.orders_pk:hover {
+    background-color:  rgba(255, 255, 255, 0.8);
+}
+
+
+.orders_pk p  a{
+    color: rgb(59, 202, 190);       
+    text-decoration: none;  
+    font-size: 1.3rem;
+    font-weight: 500;
+    display: block;         
+    padding: 15px;  
+}
+
+.order_head {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: rgb(77, 197, 201);
+    font-size: 20px;
+}
+
+.table {
+    width: 100%;
+    border: 2px solid black;
+    width: 450px;
+    height: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+
+}
+.table tr th {
+    font-size: 18px;
+    
+
+}
+
+.table, .table th, .table td {
+    border: 2px solid black;
+    border-collapse: collapse;
+    color: rgb(54, 148, 151);
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.pagination {
+    margin: 20px 0;
+    text-align: center;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    transition: all 0.4s;
+}
+
+.pagination a {
+    padding: 6px 10px;
+    border: 2px solid black;
+    text-decoration: none;
+    color: rgb(77, 197, 201);
+    border-radius: 10px;
+}
+
+.pagination a:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.pagination .current {
+    font-weight: bold;
+    color: rgb(77, 197, 201);
+}
+
+
+.search-box {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.search-box input {
+    padding: 6px;
+    flex: 1;
+}
+
+.search-box button {
+    padding: 6px 12px;
+    cursor: pointer;
+
+}
+
+.seach-tablet {
+    background-color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 450px;
+    height: 100px;       
+    border: 3px solid black;     
+    text-decoration: none;  
+    font-size: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 700;        
+    padding: 15px;
+    gap: 10px;
+    padding-top: 25px;
+    margin-top: 30px;
+    transition: all 0.4s;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.seach-tablet p a{
+    text-decoration: none;
+    color: rgb(77, 197, 201);
+}
+
+.seach-tablet:hover {
+    background-color:  rgba(255, 255, 255, 0.8);
+}
+
+.car-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.car-image img {
+   
+    width: 400px;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+
+.visited {
+    top: 50px;
+    color: rgb(77, 197, 201);       
+}
+
+.views {
+    /* position: absolute; */
+    bottom: 10px;        
+    left: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 5px 10px;
+    border-radius: 40px;
+    font-size: 18px;
+    font-weight: 600;
+    display: inline-block;
+    
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-box input[type="text"] {
+    padding: 10px 18px;
+    border-radius: 999px;
+    border: 1px solid black;
+    font-size: 16px;
+    outline: none;
+    width: 250px;
+    transition: all 0.4s;
+}
+
+.search-box input[type="text"]:focus {
+    border-color: black;
+    box-shadow: 0 0 6px transparent;
+}
+
+.search-box button {
+    padding: 10px 22px;
+    border-radius: 999px; 
+    border: 1.3px solid rgb(131, 130, 130);
+    background-color: transparent;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+
+.search-box button:hover {
+    color: rgb(77, 197, 201);
+}
+
+.mycars-link {
+    background-color: #00a86b; /* žalia */
+    color: white;
+    padding: 10px 18px;
+    border-radius: 999px;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.mycars-link:hover {
+    background-color: #008f5c;
+}
+
+
+
+.logout_first form.logout button {
+
+    padding: 10px 20px;
+    border-radius: 999px;
+    background-color: transparent;
+    border: 1.3px solid rgb(131, 130, 130);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    flex-direction: row;
+    transition: 0.2s;
+}
+
+.logout_first form.logout button:hover {
+    color: rgb(77, 197, 201);
+}
+
+.login .login-admin {
+    background-color: transparent; 
+    align-items: center;
+    color: white;
+    width: 80px;
+    height: 30px;
+    padding: 10px 18px;
+    margin-top: 10px;
+    margin-left: 5px;
+    border-radius: 999px;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+
+.login-link {
+    background-color: transparent; 
+    color: white;
+    padding: 10px 18px;
+    border-radius: 999px;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.login-link li a {
+    background-color: transparent; 
+    color: white;
+    padding: 10px 18px;
+    border-radius: 999px;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.login-link:hover {
+    color: rgb(77, 197, 201);
+}
+
+/* prisijungimo forma */
+.login_form {
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 30px;
+    background: transparent;
+    border-radius: 20px;
+    border: 1px solid rgb(131, 130, 130);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    font-family: "Inter", sans-serif;
+}
+
+
+.login_form form p {
+    margin-bottom: 18px;
+}
+
+.login_form input {
+    width: 90%;
+    padding: 12px 16px;
+    border-radius: 999px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.4s;
+}
+
+.login_form input:focus {
+    border-color: #0078ff;
+    box-shadow: 0 0 6px rgba(0,120,255,0.4);
+}
+
+
+.login_form button {
+    width: 97%;
+    padding: 12px 20px;
+    border-radius: 999px;
+    border: none;
+    background-color: transparent;
+    border: 1px solid rgb(131, 130, 130);
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: all 0.4s;
+}
+
+.login_form button:hover {
+    color: rgb(77, 197, 201);
+}
+
+.forgot_pswrd {
+    display: block;
+    margin-top: 15px;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.forgot_pswrd:hover {
+    color: rgb(77, 197, 201);
+}
+
+/* Username ir Password label'iai */
+.login_form label[for="id_username"],
+.login_form label[for="id_password"] {
+    font-weight: 600;
+    font-size: 15px;
+    color: rgb(77, 197, 201);
+    margin-bottom: 6px;
+    display: block;
+    font-weight: 600;
+}
+/* mano automobiliai */
+.my_cars {
+    width: 100%;
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 700px;
+    height:400px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    border-collapse: collapse;
+    color: rgb(77, 197, 201);
+    display: flex;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.paragraph {
+    color: rgb(77, 197, 201);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.paragraph a {
+    text-decoration: none;
+    color: rgb(77, 197, 201);
+    transition: all 0.4s;
+}
+
+.paragraph a:hover {
+    color: rgba(77, 197, 201, 0.527);
+}
+
+.reset_form {
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 30px;
+    background: transparent;
+    border-radius: 20px;
+    border: 1px solid rgb(131, 130, 130);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    font-family: "Inter", sans-serif;
+}
+
+.reset_form h2 {
+    color: white;
+}
+
+
+.reset_form form p {
+    margin-bottom: 18px;
+    color: white;
+}
+
+.reset_form input {
+    width: 90%;
+    padding: 12px 16px;
+    border-radius: 999px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.4s;
+}
+
+
+.reset_form button {
+    width: 97%;
+    padding: 12px 20px;
+    border-radius: 999px;
+    border: none;
+    background-color: transparent;
+    border: 1px solid rgb(131, 130, 130);
+    color: rgb(77, 197, 201);
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: all 0.4s;
+}
+
+.reset_form button:hover {
+    color: rgba(4, 247, 255, 0.575);
+}
+
+.reset_form label[for="id_email"] {
+    font-weight: 600;
+    font-size: 15px;
+    color: rgb(77, 197, 201);
+    margin-bottom: 10px;
+    display: block;
+    font-weight: 600;   
+
+}
+
+.reset_done {
+    max-width: 400px;
+    margin: 40px auto;
+    color: white;
+    padding: 30px;
+    background: transparent;
+    border-radius: 20px;
+    border: 1px solid rgb(131, 130, 130);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    font-family: "Inter", sans-serif;
+}
+
+.reset_done .reset_button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 20px;
+    border-radius: 999px;
+    text-decoration: none;
+    background-color: transparent;
+    border: 1px solid rgb(131, 130, 130);
+    color: rgb(77, 197, 201);
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: all 0.4s;
+}
+
+.reset_done .reset_button:hover {
+    color: rgb(49, 248, 255);
+}
+
+/* pagrindinis pislapis */
+
+.homepage {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    font-family: "Inter", sans-serif;
+}
+
+.hero {
+    text-align: center;
+    padding: 40px 20px;
+    background: transparent;
+    border-radius: 20px;
+    margin-bottom: 40px;
+    border: 1px solid  rgb(131, 130, 130);
+}
+
+.hero h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.hero p {
+    font-size: 22px;
+    color: rgb(77, 197, 201);
+}
+
+/* Apie mus */
+.about {
+    margin-bottom: 40px;
+    text-align: center;
+    color: rgb(77, 197, 201);
+    font-weight: 600;
+    margin-bottom: 40px;
+}
+
+.about h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.about p {
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+/* Paslaugos */
+.services h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    text-align: center;
+    color: rgb(77, 197, 201);
+    
+}
+
+.services ul {
+    list-style: none;
+    padding: 0;
+}
+
+.services li {
+    background: transparent;
+    border: 1px solid  rgb(131, 130, 130);
+    padding: 12px 18px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: rgb(77, 197, 201);
+    text-align: center;
+    cursor: pointer;
+}
+
+.services li:hover {
+    color: rgba(30, 246, 253, 0.486);
+}
+
+
+.footer {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 20px 0;
+    margin-top: 40px;
+    border-top: 2px solid rgb(131, 130, 130);
+    text-align: center;
+    font-family: "Inter", sans-serif;
+     flex-shrink: 0;
+}
+
+.views {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 180px;
+    height: 50px;
+    border: 1px solid  rgb(131, 130, 130);
+}
+
+.footer .visited .views {
+    font-size: 15px;
+    color: rgb(36, 248, 255);
+    margin: 0;
+}
+
+.visited {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%; 
+    margin: 0 auto;
+}
+
+.reg_form {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 30px;
+    background: transparent;
+    border-radius: 20px; 
+    border: 1px solid rgb(131, 130, 130); 
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+
+}
+
+
+
+.registration {
+    width: 100%;
+    max-width: 100%; 
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    margin: 40px auto;
+    padding: 30px;
+    color: rgb(77, 197, 201);
+    background: transparent;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    font-family: "Inter", sans-serif;
+}
+
+.registration label {
+    
+    margin-bottom: 6px;
+    padding: 0; 
+    font-size: 16px;
+    font-weight: 600;
+    color: rgb(77, 197, 201);
+}
+
+.registration input {
+    width: 94%;
+    padding: 12px 16px;
+    border-radius: 999px;
+    border: 1px solid rgb(131, 130, 130);
+    background: transparent;
+    color: rgb(77, 197, 201);
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.reg_button  {
+    width: 97%;
+    padding: 12px 20px;
+    border-radius: 999px;
+    border: none;
+    background-color: transparent;
+    border: 1px solid rgb(131, 130, 130);
+    color: rgb(77, 197, 201);
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: all 0.4s;
+}
+
+.reg_button:hover {
+    color: rgba(4, 247, 255, 0.575);
+}
+
+.two_buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+
+.comment_field {
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid rgb(131, 130, 130);
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    color: rgb(77, 197, 201);
+    font-family: "Inter", sans-serif;
+}
+
+.comment_field h3 {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    font-size: 24px;
+    margin-bottom: 15px;
+    font-weight: 700;
+    
+}
+
+.comment_client {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.comment_section {
+    padding: 12px 15px;
+    margin: 10px 0 20px 0;
+    background: rgba(255, 255, 255, 0.03);
+    border-left: 3px solid rgb(77, 197, 201);
+    border-radius: 8px;
+    line-height: 1.5;
+}
+
+.comment_field h4 {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+
+.comment_form {
+    display: block;
+}
+
+.comment_field textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 10px;
+    border: 1px solid rgb(131, 130, 130);
+    background: rgba(255, 255, 255, 0.05);
+    color: rgb(77, 197, 201);
+    font-size: 16px;
+    min-height: 120px;
+    resize: vertical;
+    box-sizing: border-box;
+}
+
+.comment_field input[type="text"] {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 10px;
+    border: 1px solid rgb(131, 130, 130);
+    background: rgba(255, 255, 255, 0.05);
+    color: rgb(77, 197, 201);
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.comment_button {
+    display: block;
+    width: 120px;
+    height: 60px;
+    font-size: 16px;
+    margin-top: 10px;
+    margin: 15px auto 0 auto;
+    border-radius: 999px;
+    border: 1px solid rgb(131, 130, 130);
+    background: transparent;
+    color: rgb(77, 197, 201);
+    cursor: pointer;
+    transition:  all 0.4s;
+}
+
+.comment_button:hover {
+    color: rgba(48, 248, 255, 0.479);
+    
+}
+
+
+.profile_text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 400;
+    color: rgb(77, 197, 201);
+}

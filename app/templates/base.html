@@ -1,0 +1,91 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+   <link rel="stylesheet" href="{% static 'custom_style.css' %}"/>
+
+    <title>{% block title %}{% endblock %}</title>
+  </head>
+  <body class="container">
+    <header class="header">
+      <!-- search logika -->
+       {% if user.is_authenticated %}
+      <form method="get" class="search-box" action="{% url 'search' %}">
+        <input type="text" name="query" placeholder="Ieškoti pagal pavadinimą..." value="{{ request.GET.q }}">
+        <button type="submit">Search</button>
+        {% endif %}
+      </form>
+      <ul>
+        <li>
+          <a href="{% url 'index' %}">pradinis puslapis</a>
+        </li>
+          {% if user.is_authenticated %}
+        <li>
+          <a href="{% url 'orders' %}">vykdomi darbai</a>
+        </li>
+         <li>
+          <a href="{% url 'cars' %}">Registruoti automobiliai</a>
+        </li>
+        
+        <li>
+           <a href="{% url 'mycars' %}" >Mano automobiliai</a> 
+        </li>
+          {% endif %}
+      </ul>
+      {% if user.is_authenticated %}
+      <div class="login">
+        <ul>
+          <li>
+            <a href="{% url 'profile' %}" class="login-admin">{{ user.username }}</a>
+          </li>
+          <li>
+       
+          </li>
+          <li class="logout_first">
+            <form class="logout" method="post" action="{% url 'logout' %}">
+              {% csrf_token %}
+              <button type="submit" >Logout</button>
+            </form>
+          </li>
+          {% else %}
+          <div class="two_buttons">
+            <li><a href="{% url 'login' %}" class="login-link">prisijungti</a></li>
+           <li>
+            <a href="{% url 'singup' %}">Registracija</a>
+           </li>
+          </div>
+           
+        </ul>
+      </div> 
+      {% endif %} 
+    </header>
+
+    <div class="main">
+      {% block content %} {% endblock %} 
+      
+    </div>
+
+    <footer class="footer">
+      <div class="visited">
+        <p class="views">cia jus lankotes {{ num_visits }} karta</p>
+        <p class="author">&copy; Sukure - Evaldas Martinionis</p>
+    </div>
+  </footer>
+  </body>
+</html>
