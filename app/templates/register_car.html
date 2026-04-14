@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}Cars{% endblock %}
+
+{% block content %}
+
+<div class="form-wrapper">
+    <div class="form-card">
+        <h2>Registruoti automobilį</h2>
+
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="submit-btn">Pateikti</button>
+        </form>
+    </div>
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const makeSelect = document.getElementById("id_make");
+    const modelSelect = document.getElementById("id_model");
+
+    makeSelect.addEventListener("change", function() {
+        const makeId = this.value;
+
+        fetch(`/ajax/load-models/?make_id=${makeId}`)
+            .then(response => response.json())
+            .then(data => {
+                modelSelect.innerHTML = "";
+                data.forEach(item => {
+                    const option = document.createElement("option");
+                    option.value = item.id;
+                    option.textContent = item.name;
+                    modelSelect.appendChild(option);
+                });
+            });
+    });
+});
+</script>
+{% endblock %}

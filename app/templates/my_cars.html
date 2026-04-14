@@ -1,0 +1,39 @@
+{% extends "base.html" %}  
+
+{% block title %}Pradzia{% endblock %}
+
+
+{% block content  %}
+<div class="my_cars">
+{% for instance in instances %}
+<div class="order-box">
+
+    {% if instance.car %}
+        <p class="paragraph">
+            <a href="{% url 'car' instance.car.id %}">
+                {{ instance.car.make }} {{ instance.car.model }}
+            </a>
+        </p>
+    {% else %}
+        <p class="paragraph">
+            Automobilis nepriskirtas
+        </p>
+    {% endif %}
+
+    <p>
+        <strong>Statusas:</strong> {{ instance.get_status_display }}
+    </p>
+    {% if instance.due_back %}
+    <p>
+        <strong>Numatoma sutvarkymo data:</strong> {{ instance.due_back }}
+    </p>
+     {% else %}
+        <p>
+            <strong>Planuojama sutvarkymo data:</strong> dar nenustatyta
+        </p>
+{% endif %}
+
+</div>
+{% endfor %}
+</div>
+{% endblock %}

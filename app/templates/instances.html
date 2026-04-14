@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}Užsakymai{% endblock %}
+
+{% block content %}
+
+<div class="administrate">
+    <a href="{% url 'instance_create' %}" class="administrate_first">Naujas užsakymas</a>
+
+    {% for instance in instances %}
+    <div class="aministrate_field"></div>
+
+    <a href="{% url 'instance' instance.pk %}" class="administrate_second">
+
+        <p>
+            <strong>Automobilis:</strong>
+            {% if instance.car %}
+                {{ instance.car.make }} {{ instance.car.model }}
+                ({{ instance.car.license_plate }})
+            {% else %}
+                Nepriskirtas automobilis
+            {% endif %}
+        </p>
+
+        {% if instance.car %}
+        <p>
+            <strong>Telefono nr.:</strong> {{ instance.car.phone }}
+        </p>
+        <p>
+            <strong>Gedimo aprašymas:</strong> {{ instance.car.description }}
+        </p>
+        {% endif %}
+
+        <p>
+            <strong>Terminas:</strong> {{ instance.due_back }}
+            <span>({{ instance.get_status_display }})</span>
+        </p>
+
+    </a>
+    {% endfor %}
+</div>
+
+{% endblock %}
+

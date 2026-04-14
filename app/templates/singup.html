@@ -1,0 +1,25 @@
+{% extends "base.html" %}  
+
+ {% block title %}Pradzia{% endblock %}
+ {% block body_class %}index-page{% endblock %}
+
+
+
+ {% block content  %}
+
+<form method="POST" class="reg_form">
+    {% csrf_token %}
+
+    {{ form.non_field_errors }}
+
+    {% for field in form %}
+        <div class="registration">
+            <label>{{ field.label }}</label>
+            {{ field }}
+            {{ field.errors }}
+        </div>
+    {% endfor %}
+
+    <button type="submit" class="reg_button">Registruotis</button>
+</form>
+ {% endblock %}

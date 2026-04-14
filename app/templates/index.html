@@ -1,0 +1,39 @@
+<!-- tai sujungiami html puslapiai 
+ paliekama tik taiko reikai nes puslapis nepagrindinis-->
+ {% extends "base.html" %}  
+
+ {% block title %}Pradzia{% endblock %}
+ {% block body_class %}index-page{% endblock %} <!-- cia pakeiciam title pavadinima -->
+
+ {% block content  %}
+
+<div class="homepage">
+
+    <section class="hero">
+        <h1>Sveiki atvykę į AutoServisą</h1>
+        <p>Profesionalios automobilių remonto ir priežiūros paslaugos Kaune.</p>
+    </section>
+
+    <section class="about">
+        <h2>Apie mus</h2>
+        <p>
+            Mūsų autoservisas teikia aukštos kokybės remonto paslaugas jau daugiau nei 10 metų.
+            Dirbame su visų markių automobiliais, naudojame modernią diagnostikos įrangą ir
+            užtikriname greitą bei patikimą aptarnavimą.
+        </p>
+    </section>
+
+    <section class="services">
+        <h2>Atliekami darbai</h2>
+        <ul>
+            <li>Kompiuterinė diagnostika</li>
+            <li>Variklio remontas</li>
+            <li>Stabdžių sistemos remontas</li>
+            <li>Pakabos remontas</li>
+            <li>Ratų suvedimas</li>
+            <li>Tepalų ir filtrų keitimas</li>
+        </ul>
+    </section>
+</div>
+ {% endblock %}
+

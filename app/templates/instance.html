@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Nauja masina{% endblock %}
+
+{% block content %}
+<div class="order_info" >
+<h1>{{ instance.car.make }}</h1>
+<p>license plate: {{ instance.car.license_plate }}</p>
+{% if instance.reader %}
+<p>Klientas:
+    {% if instance.reader.photo %}
+    <img class="profile-img" src="{{ instance.reader.photo.url }}">
+    {% endif %}
+    {{ instance.reader.username }}
+</p>
+{% endif %}
+<p>Bus Sutaisyta: <span>{{ instance.due_back }}</span></p>
+<p>Būsena: {{ instance.get_status_display }}</p>
+
+<div class="order_buttons">
+    <a href="{% url 'instance_update' instance.pk %}" class="first" >Redaguoti</a>
+    <a href="{% url 'instance_delete' instance.pk %}" class="second">Ištrinti</a>
+</div>
+</div>
+{% endblock %}

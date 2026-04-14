@@ -1,0 +1,32 @@
+
+{% extends "base.html" %}
+
+{% block titile %} paslaugos pridejimas {% endblock %}
+
+{% block content %}
+
+<div class="order_add">
+    <h1>Paslaugu redagavimas/pridejimas</h1>
+  
+<form method="POST" class="form_change">
+    {% csrf_token %}
+
+    {% for field in form %}
+        <div class="form-group">
+            <label>{{ field.label }}</label>
+            {{ field }}
+
+            {% if field.errors %}
+                <div class="error">
+                    {{ field.errors }}
+                </div>
+            {% endif %}
+        </div>
+    {% endfor %}
+
+    <button type="submit">Išsaugoti</button>
+</form>
+
+</div>
+
+{% endblock %}

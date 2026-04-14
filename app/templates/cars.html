@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}Cars{% endblock %}
+
+
+{% block content %}
+
+{% for car in cars %}
+<div class="cars-list_top">
+  <p><a href="{% url 'car' car.pk %}">{{ car }} </a></p>
+</div>
+
+{% endfor %}
+<!-- puslapiavimo logika kai galima pasirinkti koki puslapi rodyti -->
+<div class="pagination">
+    {% if cars.has_previous %}
+        <a href="?page=1">&laquo; Pirma</a>
+        <a href="?page={{ cars.previous_page_number }}">Atgal</a>
+    {% endif %}
+
+    <span class="current">
+        Puslapis {{ cars.number }} iš {{ cars.paginator.num_pages }}
+    </span>
+
+    {% if cars.has_next %}
+        <a href="?page={{ cars.next_page_number }}">Pirmyn</a>
+        <a href="?page={{ cars.paginator.num_pages }}">Paskutinė &raquo;</a>
+    {% endif %}
+</div>
+
+
+{% endblock  %}

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Uzsakymu trynimas{% endblock %}
+
+{% block content %}
+
+<div class="content-section">
+
+    <form method="POST">
+
+        {% csrf_token %}
+        
+        <fieldset class="content_form">
+            <legend>Ištrinti uzsakyma</legend>
+
+           
+            <h2>Ar tikrai norite ištrinti uzakyma {{ instance.uuid }} ("{{ instance.car.make }}")?</h2>
+             {{ form.as_p }}
+            <div class="delete_form_buttons">
+                <button type="submit">ištrinti</button>
+                <button><a href="{% url 'instance' instance.pk %}">Atšaukti</a></button>
+            </div>
+        </fieldset>
+    </form>
+</div>
+{% endblock %}

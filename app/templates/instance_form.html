@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}uzsakymu kūrimas/redagavimas{% endblock %}
+
+{% block content %}
+
+<div class="form_change">
+    <h1>Uzsakymu kūrimas/redagavimas</h1>
+<form method="POST" class="form_change">
+    {% csrf_token %}
+
+    {% for field in form %}
+        <div class="form-group">
+            <label>{{ field.label }}</label>
+            {{ field }}
+
+            {% if field.errors %}
+                <div class="error">
+                    {{ field.errors }}
+                </div>
+            {% endif %}
+        </div>
+    {% endfor %}
+
+    <button type="submit">Išsaugoti</button>
+</form>
+
+</div>
+{% endblock %}
