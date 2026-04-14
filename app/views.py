@@ -256,7 +256,7 @@ def register_car(request):
                 status='p',  # Pending
                 reader=None,  # arba priskirk adminą
             )
-            return redirect("cars")  # arba į sėkmės puslapį
+            return redirect("/")  # arba į sėkmės puslapį
     else:
         form = CarRegisterForm()
 
